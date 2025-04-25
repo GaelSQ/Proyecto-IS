@@ -8,7 +8,11 @@ def conectar_db():
             host="localhost",
             user="root",
             password="",
+<<<<<<< HEAD
             database="libreria",
+=======
+            database="usuarios",
+>>>>>>> 01a027e (Update database_utils.py)
             port=3306
         )
         return conexion
@@ -23,9 +27,13 @@ def verificar_usuario(username_or_email, password):
 
     try:
         cursor = conexion.cursor()
+<<<<<<< HEAD
         cursor.execute("SELECT USUARIO, CONTRASENA FROM usuarios WHERE USUARIO = %s OR CORREO = %s", 
                        (username_or_email, username_or_email))
 
+=======
+        cursor.execute("SELECT CONTRASENA FROM usuarios WHERE USUARIO = %s OR CORREO = %s", (username_or_email,username_or_email))
+>>>>>>> 01a027e (Update database_utils.py)
         resultado = cursor.fetchone()
         cursor.close()
         conexion.close()
@@ -39,8 +47,11 @@ def verificar_usuario(username_or_email, password):
     except mysql.connector.Error as err:
         return False, f"Error al verificar usuario: {err}"   
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 01a027e (Update database_utils.py)
 def agregar_usuario(username, email, password):
     conexion = conectar_db()
     if not conexion:
@@ -65,6 +76,7 @@ def agregar_usuario(username, email, password):
 
     except mysql.connector.Error as err:
         return False, f"Error al registrar usuario: {err}"
+<<<<<<< HEAD
     
 def buscar_libro_autor(name, author):
     conexion = conectar_db()
@@ -155,4 +167,6 @@ def consultar_info_libro(nombre):
         return False, f"Error al consultar información del libro: {err}"
 
 
+=======
+>>>>>>> 01a027e (Update database_utils.py)
 
