@@ -28,12 +28,18 @@ def verificar_usuario(username_or_email, password):
     try:
         cursor = conexion.cursor()
 <<<<<<< HEAD
+<<<<<<< HEAD
         cursor.execute("SELECT USUARIO, CONTRASENA FROM usuarios WHERE USUARIO = %s OR CORREO = %s", 
                        (username_or_email, username_or_email))
 
 =======
         cursor.execute("SELECT CONTRASENA FROM usuarios WHERE USUARIO = %s OR CORREO = %s", (username_or_email,username_or_email))
 >>>>>>> 01a027e (Update database_utils.py)
+=======
+        cursor.execute("SELECT USUARIO, CONTRASENA FROM usuarios WHERE USUARIO = %s OR CORREO = %s", 
+                       (username_or_email, username_or_email))
+
+>>>>>>> f1f6f47 (Update database_utils.py)
         resultado = cursor.fetchone()
         cursor.close()
         conexion.close()
@@ -48,10 +54,18 @@ def verificar_usuario(username_or_email, password):
         return False, f"Error al verificar usuario: {err}"   
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 01a027e (Update database_utils.py)
+=======
+
+            
+
+
+
+>>>>>>> f1f6f47 (Update database_utils.py)
 def agregar_usuario(username, email, password):
     conexion = conectar_db()
     if not conexion:
@@ -76,6 +90,7 @@ def agregar_usuario(username, email, password):
 
     except mysql.connector.Error as err:
         return False, f"Error al registrar usuario: {err}"
+<<<<<<< HEAD
 <<<<<<< HEAD
     
 def buscar_libro_autor(name, author):
@@ -170,3 +185,5 @@ def consultar_info_libro(nombre):
 =======
 >>>>>>> 01a027e (Update database_utils.py)
 
+=======
+>>>>>>> f1f6f47 (Update database_utils.py)
