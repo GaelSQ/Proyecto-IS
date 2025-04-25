@@ -13,6 +13,7 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE libros (
+<<<<<<< HEAD
     NOMBRE VARCHAR(50) NOT NULL,
     AUTOR VARCHAR(50) NOT NULL,
     PUBLICACION DATE NOT NULL,
@@ -21,3 +22,11 @@ CREATE TABLE libros (
     PORTADA VARCHAR(255)  -- Guardar nombre de imagen en la portada "HarryPotter.jpg"
 );
 
+=======
+	NOMBRE VARCHAR(50) NOT NULL,
+    AUTOR VARCHAR(50) NOT NULL,
+    PUBLICACION DATE NOT NULL,
+    GENERO VARCHAR(20) NOT NULL,
+    SINOPSIS VARCHAR(255) NOT NULL
+);
+>>>>>>> 22f104b (Base de datos)
