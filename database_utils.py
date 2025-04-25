@@ -52,6 +52,7 @@ def verificar_usuario(username_or_email, password):
         return False, "Usuario o contraseña incorrecta"
     except mysql.connector.Error as err:
         return False, f"Error al verificar usuario: {err}"   
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,6 +63,8 @@ def verificar_usuario(username_or_email, password):
 =======
 
             
+=======
+>>>>>>> ddcdeba (Funciones de busqueda de libros y autores)
 
 
 
@@ -90,6 +93,7 @@ def agregar_usuario(username, email, password):
 
     except mysql.connector.Error as err:
         return False, f"Error al registrar usuario: {err}"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     
@@ -187,3 +191,29 @@ def consultar_info_libro(nombre):
 
 =======
 >>>>>>> f1f6f47 (Update database_utils.py)
+=======
+    
+def buscar_libro(nombre):
+    conexion = conectar_db()
+    cursor = conexion.cursor()
+    cursor.execute( "SELECT FROM libros WHERE NOMBRE = %s",(nombre))
+    resultado = cursor.fetchone()
+    cursor.close()
+    conexion.close()
+    if resultado: 
+        return True, "Se encontro el libro"
+    return False, "El libro no se encuentra"
+
+def buscar_autor(nombre):
+    conexion = conectar_db()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM libros WHERE NOMBRE = %s",(nombre))
+    resultado = cursor.fetchall()
+    cursor.close()
+    conexion.close()
+    if resultado: 
+        return True, "Libros encontrados del autor"
+    return False, "No se encontraron libros del autor"
+
+
+>>>>>>> ddcdeba (Funciones de busqueda de libros y autores)
