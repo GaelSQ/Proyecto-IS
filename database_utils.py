@@ -9,6 +9,9 @@ def conectar_db():
             user="root",
             password="",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76c15dd (Añadi los agregar/eliminar y consultar inventario de admin, entre otros cambios)
             database="libreria",
 =======
             database="usuarios",
